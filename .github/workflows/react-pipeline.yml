@@ -31,3 +31,19 @@ jobs:
         with:
           name: react-build
           path: dist
+      # Send email notification
+      - name: Email Notification
+        uses: dawidd6/action-send-mail@v3
+        with:
+         server_address: smtp.example.com
+         server_port: 465
+         username: ${{ secrets.MAIL_USERNAME }}
+         password: ${{ secrets.MAIL_PASSWORD }}
+         subject: React Build Notification
+         to: ${{ secrets.RECEIVER_EMAIL }}
+         from: ${{ secrets.MAIL_EMAIL }}
+         body: build jon of ${{ github.repository }} on branch ${{ github.ref_name }} has completed successfully.
+          
+
+        
+          
