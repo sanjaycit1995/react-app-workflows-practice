@@ -42,7 +42,7 @@ jobs:
          password: ${{ secrets.MAIL_PASSWORD }}
          subject: React Build Notification
          to: ${{ secrets.RECEIVER_EMAIL }}
-         from: ${{ secrets.MAIL_EMAIL }}
+         from: ${{ secrets.MAIL_USERNAME }}
          body: build jon of ${{ github.repository }} on branch ${{ github.ref_name }} has completed successfully.
           
 
